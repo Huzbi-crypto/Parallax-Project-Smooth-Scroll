@@ -2,14 +2,6 @@ const track = document.getElementById("image-track");
 
 const circleCursor = document.querySelector('.circle');
 
-// Creating Mouse Cursor
-const moveCursor = (e) => {
-  const mouseX = e.clientX;
-  const mouseY = e.clientY;
-
-  circleCursor.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-}
-
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
 const handleOnUp = () => {
@@ -53,6 +45,3 @@ window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
-
-// Event Listener for the Mouse
-window.addEventListener('mousemove', moveCursor);
